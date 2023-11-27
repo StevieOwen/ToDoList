@@ -69,6 +69,9 @@ form fieldset{
 .but:hover{
     background-color:#c4148c;
 }
+.disable{
+    background-color: #A9A9A9;
+}
 #tasks_container ul .list_items{
     display: flex;
     justify-content: space-around;
@@ -90,22 +93,21 @@ form fieldset{
     background-image: url(../icon/unchecked.png);
     position: absolute;
     border-radius: 5px;
-    right: 80px;
-    top:-3px ;
+    right: 69%;
+    top:42% ;
     background-size: cover;
     background-position: center;
 }
 
-#tasks_container ul div .click li::before{
+#tasks_container ul div .click {
     content: " ";
     height: 22px;
-    width: 22px;
-    background-image: url(../icon/checkbox.png);
+    width: 28px;
+    background-image: url(../icon/check.png);
     position: absolute;
-    border: 2px solid black;
     border-radius: 5px;
-    right: 100px;
-    top:-3px ;
+    right: 69%;
+    top:42.5% ;
     background-size: cover;
     background-position: center;
 }

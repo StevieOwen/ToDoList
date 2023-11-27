@@ -12,7 +12,8 @@ add.addEventListener("click",function(e){
     }else{
     let li=document.createElement("li");
     let div=document.createElement("div");
-    let span=document.createElement("span");
+    let span1=document.createElement("span");
+    let span2=document.createElement("span");
      /* remove button*/   
     let remove=document.createElement("button");
     remove.textContent="Remove";
@@ -78,11 +79,37 @@ add.addEventListener("click",function(e){
     li.textContent=task.value;
     li.style.textTransform='capitalize';
     task.value="";
-    div.appendChild(span);
-    span.classList.add("check_box");
-    /*button checkbox*/
+    div.appendChild(span1);
+    div.appendChild(span2);
+    span1.classList.add("check_box");
+    span1.addEventListener("click",function(e){
+        e.preventDefault();   
+        span1.style.display="none";
+        span2.style.display="inline-block"
+        li.style.textDecoration="line-through";
+        span2.classList.add("click");
+        mark.disabled=true;
+        edit.disabled=true;
+        categorized.disabled=true;
+        mark.classList.add("disable");
+        edit.classList.add("disable");
+        categorized.classList.add("disable");
         
-
+    })
+    span2.addEventListener("click",function(e){
+        e.preventDefault();
+        span2.style.display="none";
+        span1.style.display="inline-block"
+        li.style.textDecoration="none";
+        mark.disabled=false;
+        edit.disabled=false;
+        categorized.disabled=false;
+        mark.classList.remove("disable");
+        edit.classList.remove("disable");
+        categorized.classList.remove("disable");
+        
+    })
+    
 
     div.appendChild(li);
     div.appendChild(remove);
@@ -95,4 +122,6 @@ add.addEventListener("click",function(e){
 }
 
 })
+
+
 
