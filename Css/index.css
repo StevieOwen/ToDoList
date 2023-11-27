@@ -1,0 +1,69 @@
+body{
+
+}
+:root{
+
+}
+
+header{
+    margin-bottom: 10%;
+}
+main{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+form fieldset:nth-child(1){
+    text-align: center;
+}
+form fieldset:nth-child(1) input{
+    border-radius: 10px;
+    padding: 1% 15%;
+    font-size: 1rem;
+    margin-bottom: 1%;
+    text-align: center;
+}
+form fieldset:nth-child(1) button{
+    border-radius: 10px;
+    padding: 1% 15%;
+    font-size: 1rem;
+}
+
+#tasks_container ul div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
+
+#tasks_container ul div li{
+    font-size: 1.1rem;
+    list-style-type: none;
+    position: relative;
+}
+
+#tasks_container ul div li::before{
+    content: " ";
+    height: 28px;
+    width: 28px;
+    background-image: url(../icon/unchecked.png);
+    position: absolute;
+    border-radius: 5px;
+    right: 100px;
+    top:-3px ;
+    background-size: cover;
+    background-position: center;
+}
+
+#tasks_container ul div .click li::before{
+    content: " ";
+    height: 22px;
+    width: 22px;
+    background-image: url(../icon/checkbox.png);
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 5px;
+    right: 100px;
+    top:-3px ;
+    background-size: cover;
+    background-position: center;
+}
