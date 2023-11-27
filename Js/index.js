@@ -20,8 +20,9 @@ add.addEventListener("click",function(e){
     remove.classList.add("but");
     remove.addEventListener("click",function(e){
         e.preventDefault();
-        remove.parentElement.remove();
-     })   
+        remove.parentElement.remove();  
+     }) 
+
      /* mark as important button*/
     let mark=document.createElement("button");
     mark.textContent="Mark as important";
@@ -30,7 +31,9 @@ add.addEventListener("click",function(e){
         e.preventDefault();
         list_task.insertBefore(mark.parentElement,list_task.firstChild);
         mark.parentElement.classList.toggle("important");
+        
      })
+
      /* categorized button*/
     let categorized=document.createElement("button");
     categorized.textContent="Categorized";
@@ -52,9 +55,9 @@ add.addEventListener("click",function(e){
             h3.textContent=task.value;
             task.value="";
             ul.appendChild(categorized.parentElement);
-
+            
         })
-
+        
     })
 
     /*edit button*/
@@ -73,14 +76,15 @@ add.addEventListener("click",function(e){
             d.preventDefault();
             li.textContent=task.value;
             task.value="";
+            
         })
+        
         })
 
     li.textContent=task.value;
     li.style.textTransform='capitalize';
     task.value="";
-    div.appendChild(span1);
-    div.appendChild(span2);
+    
     span1.classList.add("check_box");
     span1.addEventListener("click",function(e){
         e.preventDefault();   
@@ -99,7 +103,8 @@ add.addEventListener("click",function(e){
     span2.addEventListener("click",function(e){
         e.preventDefault();
         span2.style.display="none";
-        span1.style.display="inline-block"
+        span1.style.display="inline-block";
+        span1.classList.add("check_box");
         li.style.textDecoration="none";
         mark.disabled=false;
         edit.disabled=false;
@@ -109,8 +114,8 @@ add.addEventListener("click",function(e){
         categorized.classList.remove("disable");
         
     })
-    
-
+    div.appendChild(span1);
+    div.appendChild(span2);
     div.appendChild(li);
     div.appendChild(remove);
     div.appendChild(mark);
@@ -119,9 +124,17 @@ add.addEventListener("click",function(e){
     div.classList.add("list_items");
     list_task.appendChild(div);
     list_task.insertBefore(div, list_task.firstChild);
+    
 }
 
 })
 
 
 
+function saveData(){
+    localStorage.setItem('data', list_task.innerHTML);
+}
+
+function getData(){
+    list_task.innerHTML=localStorage.getItem('data');
+}

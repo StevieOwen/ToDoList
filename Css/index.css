@@ -23,6 +23,7 @@ header{
 
 header h2{
     text-align: center;
+    margin-left: 5%;
 }
 header img{
     display: block;
@@ -93,8 +94,7 @@ form fieldset{
     background-image: url(../icon/unchecked.png);
     position: absolute;
     border-radius: 5px;
-    right: 69%;
-    top:42% ;
+    right: 70%;
     background-size: cover;
     background-position: center;
 }
@@ -106,8 +106,7 @@ form fieldset{
     background-image: url(../icon/check.png);
     position: absolute;
     border-radius: 5px;
-    right: 69%;
-    top:42.5% ;
+    right: 70%;
     background-size: cover;
     background-position: center;
 }
