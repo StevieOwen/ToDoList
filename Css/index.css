@@ -110,3 +110,159 @@ form fieldset{
     background-size: cover;
     background-position: center;
 }
+
+
+
+/* Smartphones moyen*/
+
+@media screen and (min-width:360px){
+    body{
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 2% 96% 2%;
+        background-image: linear-gradient(to bottom right, #14A2C4,#7272B9 );
+        font-family: var(--font-family-sans-serif);
+    }
+    header{
+        margin-bottom: 10%;
+        position: relative;
+        background-color: #fff;
+        border: 2px solid;
+        margin-left:20%;
+        margin-right:20%;
+        margin-top: 4%;
+        border-radius: 10px;
+    }
+    
+    header h2{
+        text-align: center;
+        margin-left: 10%;
+    }
+    header img{
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: 6%;
+    }
+    #first_form{
+        text-align: center;
+        margin-bottom: 4%;
+    }
+    #first_form input{
+        border-radius: 10px;
+        padding: 1.2% 15%;
+        font-size: 1rem;
+        margin-bottom: 1%;
+        box-shadow: 1px 1px 2px 1px #7272B9;
+        margin-bottom: 2%;
+    }
+    #first_form button{
+        border-radius: 10px;
+        padding: 1% 15%;
+        font-size: 1rem;
+        background-color: #A13861;
+        color: white;
+        box-shadow: 1px 1px 2px 1px black;
+    }
+    #tasks_container ul .list_items{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2%;
+        align-items: center;
+    }
+    #tasks_container ul .list_items span{
+        display: inline-block;
+        transform: translateX(-50px);
+    }
+    #tasks_container ul .list_items li{
+        display: inline-block;
+        transform: translateX(-17px);
+        font-size: 0.8rem;
+    }
+    #tasks_container ul .list_items button{
+        display: inline-block;
+        transform: translateX(-8px);
+        margin-right: 2%;
+        font-size: 0.73rem;
+    }
+
+    #tasks_container ul div li{
+        font-size: 1rem;
+        list-style-type: none;
+        position: relative;
+        
+    }
+}
+
+@media screen and (min-width:390px) {
+    #tasks_container ul .list_items li{
+        display: inline-block;
+        transform: translateX(-17px);
+        font-size: 0.8rem;
+    }
+    #tasks_container ul .list_items button{
+        display: inline-block;
+        transform: translateX(-8px);
+        margin-right: 2%;
+        font-size: 0.8rem;
+}
+}
+
+@media screen and (min-width:410px) {
+    #tasks_container ul .list_items span{
+        display: inline-block;
+        transform: translateX(-59px);
+    }
+    #tasks_container ul .list_items li{
+        display: inline-block;
+        transform: translateX(-20px);
+        font-size: 0.9rem;
+    }
+    #tasks_container ul .list_items button{
+        display: inline-block;
+        transform: translateX(-10px);
+        margin-right: 2%;
+        font-size: 0.87rem;
+}
+}
+@media screen and (min-width:435px) {
+    #tasks_container ul .list_items span{
+        display: inline-block;
+        transform: translateX(-59px);
+    }
+    #tasks_container ul .list_items li{
+        display: inline-block;
+        transform: translateX(-15px);
+        font-size: 0.9rem;
+    }
+    #tasks_container ul .list_items button{
+        display: inline-block;
+        transform: translateX(-3px);
+        margin-right: 2%;
+        font-size: 0.9rem;
+}
+}
+
+@media screen and(min-width:459px) {
+    header h2{
+        text-align: center;
+        margin-left: 5%;
+    }
+    header img{
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: 6%;
+    }
+    #tasks_container ul .list_items span{
+        display: inline-block;
+        transform: translateX(-30px);
+    }
+    #tasks_container ul .list_items li{
+        display: inline-block;
+        transform: translateX(-15px);
+        font-size: 1rem;
+    }
+}

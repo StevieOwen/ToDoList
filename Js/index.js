@@ -14,6 +14,7 @@ add.addEventListener("click",function(e){
     let div=document.createElement("div");
     let span1=document.createElement("span");
     let span2=document.createElement("span");
+
      /* remove button*/   
     let remove=document.createElement("button");
     remove.textContent="Remove";
@@ -21,6 +22,7 @@ add.addEventListener("click",function(e){
     remove.addEventListener("click",function(e){
         e.preventDefault();
         remove.parentElement.remove();  
+        saveData();
      }) 
 
      /* mark as important button*/
@@ -31,7 +33,7 @@ add.addEventListener("click",function(e){
         e.preventDefault();
         list_task.insertBefore(mark.parentElement,list_task.firstChild);
         mark.parentElement.classList.toggle("important");
-        
+        saveData();
      })
 
      /* categorized button*/
@@ -55,9 +57,9 @@ add.addEventListener("click",function(e){
             h3.textContent=task.value;
             task.value="";
             ul.appendChild(categorized.parentElement);
-            
+            saveData();
         })
-        
+        saveData();
     })
 
     /*edit button*/
@@ -76,9 +78,9 @@ add.addEventListener("click",function(e){
             d.preventDefault();
             li.textContent=task.value;
             task.value="";
-            
+            saveData();
         })
-        
+        saveData();
         })
 
     li.textContent=task.value;
@@ -98,7 +100,7 @@ add.addEventListener("click",function(e){
         mark.classList.add("disable");
         edit.classList.add("disable");
         categorized.classList.add("disable");
-        
+        saveData();
     })
     span2.addEventListener("click",function(e){
         e.preventDefault();
@@ -112,7 +114,7 @@ add.addEventListener("click",function(e){
         mark.classList.remove("disable");
         edit.classList.remove("disable");
         categorized.classList.remove("disable");
-        
+        saveData();
     })
     div.appendChild(span1);
     div.appendChild(span2);
@@ -124,9 +126,9 @@ add.addEventListener("click",function(e){
     div.classList.add("list_items");
     list_task.appendChild(div);
     list_task.insertBefore(div, list_task.firstChild);
-    
+    saveData();
 }
-
+saveData();
 })
 
 
@@ -138,3 +140,4 @@ function saveData(){
 function getData(){
     list_task.innerHTML=localStorage.getItem('data');
 }
+
