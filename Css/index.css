@@ -1,38 +1,79 @@
-body{
 
-}
 :root{
-
+    --font-family-sans-serif:'Roboto','Open Sans','Lato','Montserrat','Noto Sans';
 }
-
-header{
-    margin-bottom: 10%;
-}
-main{
+body{
+    margin: 0;
+    padding: 0;
     display: grid;
     grid-template-columns: 25% 50% 25%;
+    background-image: linear-gradient(to bottom right, #14A2C4,#7272B9 );
+    font-family: var(--font-family-sans-serif);
+}
+header{
+    margin-bottom: 10%;
+    position: relative;
+    background-color: #fff;
+    border: 2px solid;
+    margin-left:30%;
+    margin-right:30%;
+    margin-top: 4%;
+    border-radius: 10px;
 }
 
-form fieldset:nth-child(1){
+header h2{
     text-align: center;
 }
-form fieldset:nth-child(1) input{
+header img{
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 2%;
+}
+form{
+    border: 2px solid ;
+    border-radius: 10px;
+    padding: 5%;
+    background-color: #fff;
+}
+form fieldset{
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 1px #7272B9;
+}
+#first_form{
+    text-align: center;
+}
+#first_form input{
     border-radius: 10px;
     padding: 1% 15%;
     font-size: 1rem;
     margin-bottom: 1%;
-    text-align: center;
+    /*text-align: center;*/
+    box-shadow: 1px 1px 2px 1px #7272B9;
 }
-form fieldset:nth-child(1) button{
+#first_form button{
     border-radius: 10px;
     padding: 1% 15%;
     font-size: 1rem;
+    background-color: #A13861;
+    color: white;
+    box-shadow: 1px 1px 2px 1px black;
 }
-
-#tasks_container ul div{
+.but{
+    border-radius: 10px;
+    padding: 1%;
+    background-color: #0e7e89;
+    color: white;
+    box-shadow: 1px 1px 2px 1px black;
+}
+.but:hover{
+    background-color:#c4148c;
+}
+#tasks_container ul .list_items{
     display: flex;
     justify-content: space-around;
     margin-bottom: 2%;
+    align-items: center;
 }
 
 #tasks_container ul div li{
@@ -41,14 +82,15 @@ form fieldset:nth-child(1) button{
     position: relative;
 }
 
-#tasks_container ul div li::before{
+#tasks_container ul div .check_box{
+    display: inline-block;
     content: " ";
     height: 28px;
     width: 28px;
     background-image: url(../icon/unchecked.png);
     position: absolute;
     border-radius: 5px;
-    right: 100px;
+    right: 80px;
     top:-3px ;
     background-size: cover;
     background-position: center;

@@ -12,9 +12,11 @@ add.addEventListener("click",function(e){
     }else{
     let li=document.createElement("li");
     let div=document.createElement("div");
+    let span=document.createElement("span");
      /* remove button*/   
     let remove=document.createElement("button");
     remove.textContent="Remove";
+    remove.classList.add("but");
     remove.addEventListener("click",function(e){
         e.preventDefault();
         remove.parentElement.remove();
@@ -22,6 +24,7 @@ add.addEventListener("click",function(e){
      /* mark as important button*/
     let mark=document.createElement("button");
     mark.textContent="Mark as important";
+    mark.classList.add("but");
      mark.addEventListener("click",function(e){
         e.preventDefault();
         list_task.insertBefore(mark.parentElement,list_task.firstChild);
@@ -30,6 +33,7 @@ add.addEventListener("click",function(e){
      /* categorized button*/
     let categorized=document.createElement("button");
     categorized.textContent="Categorized";
+    categorized.classList.add("but");
     categorized.addEventListener("click",function(e){
         e.preventDefault();
         let ul=document.createElement("ul");
@@ -55,6 +59,7 @@ add.addEventListener("click",function(e){
     /*edit button*/
      let edit=document.createElement("button");
      edit.textContent="Edit";
+     edit.classList.add("but");
      edit.addEventListener("click", function(e){
         e.preventDefault();
         task.placeholder="write your change here";
@@ -71,12 +76,20 @@ add.addEventListener("click",function(e){
         })
 
     li.textContent=task.value;
+    li.style.textTransform='capitalize';
     task.value="";
+    div.appendChild(span);
+    span.classList.add("check_box");
+    /*button checkbox*/
+        
+
+
     div.appendChild(li);
     div.appendChild(remove);
     div.appendChild(mark);
     div.appendChild(categorized);
     div.appendChild(edit);
+    div.classList.add("list_items");
     list_task.appendChild(div);
     list_task.insertBefore(div, list_task.firstChild);
 }
