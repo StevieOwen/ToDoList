@@ -1,7 +1,7 @@
 let task=document.querySelector("#task");
 let add=document.querySelector("#add");
 let list_task=document.querySelector("#list_task");
-let task_container=document.querySelector("#task_container");
+let task_container=document.querySelector("#tasks_container");
 
 //Function add task  
 add.addEventListener("click",function(e){
@@ -22,7 +22,7 @@ add.addEventListener("click",function(e){
     remove.addEventListener("click",function(e){
         e.preventDefault();
         remove.parentElement.remove();  
-        saveData();
+        
      }) 
 
      /* mark as important button*/
@@ -33,7 +33,7 @@ add.addEventListener("click",function(e){
         e.preventDefault();
         list_task.insertBefore(mark.parentElement,list_task.firstChild);
         mark.parentElement.classList.toggle("important");
-        saveData();
+       
      })
 
      /* categorized button*/
@@ -45,6 +45,7 @@ add.addEventListener("click",function(e){
         let ul=document.createElement("ul");
         let h3=document.createElement("h3");
         ul.appendChild(h3);
+        ul.classList.add("new_list");
         task_container.appendChild(ul);
         task.placeholder="Write the categorie here";
         task.style.borderColor="red";
@@ -52,14 +53,17 @@ add.addEventListener("click",function(e){
          ok.textContent="Ok";
         let first_form=document.querySelector("#first_form");
         first_form.appendChild(ok);
+        ok.classList.add("validate");
         ok.addEventListener("click",function(d){
             d.preventDefault();
             h3.textContent=task.value;
             task.value="";
             ul.appendChild(categorized.parentElement);
-            saveData();
+            first_form.removeChild(ok);
+            task.placeholder="Write your task here";
+            task.style.borderColor="";
         })
-        saveData();
+        
     })
 
     /*edit button*/
@@ -74,13 +78,16 @@ add.addEventListener("click",function(e){
          ok.textContent="Ok";
         let first_form=document.querySelector("#first_form");
         first_form.appendChild(ok);
+        ok.classList.add("validate");
         ok.addEventListener("click",function(d){
             d.preventDefault();
             li.textContent=task.value;
             task.value="";
-            saveData();
+            first_form.removeChild(ok);
+            task.placeholder="Write your task here";
+            task.style.borderColor="";
         })
-        saveData();
+        
         })
 
     li.textContent=task.value;
@@ -100,7 +107,7 @@ add.addEventListener("click",function(e){
         mark.classList.add("disable");
         edit.classList.add("disable");
         categorized.classList.add("disable");
-        saveData();
+       
     })
     span2.addEventListener("click",function(e){
         e.preventDefault();
@@ -114,7 +121,7 @@ add.addEventListener("click",function(e){
         mark.classList.remove("disable");
         edit.classList.remove("disable");
         categorized.classList.remove("disable");
-        saveData();
+        
     })
     div.appendChild(span1);
     div.appendChild(span2);
@@ -126,9 +133,9 @@ add.addEventListener("click",function(e){
     div.classList.add("list_items");
     list_task.appendChild(div);
     list_task.insertBefore(div, list_task.firstChild);
-    saveData();
+    
 }
-saveData();
+
 })
 
 

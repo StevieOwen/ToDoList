@@ -73,6 +73,13 @@ form fieldset{
 .disable{
     background-color: #A9A9A9;
 }
+.validate{
+    display: inline-block;
+    margin-bottom: 3%;
+    text-align: center;
+    margin-top: 2%;
+    padding:1% 8% ;
+}
 #tasks_container ul .list_items{
     display: flex;
     justify-content: space-around;
@@ -110,12 +117,15 @@ form fieldset{
     background-size: cover;
     background-position: center;
 }
-
+.new_list h3{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
 
 
 /* Smartphones moyen*/
 
-@media screen and (min-width:360px){
+@media screen and (min-width:360px) and (max-width:640px){
     body{
         margin: 0;
         padding: 0;
@@ -196,7 +206,7 @@ form fieldset{
     }
 }
 
-@media screen and (min-width:390px) {
+@media screen and (min-width:390px)and (max-width:640px) {
     #tasks_container ul .list_items li{
         display: inline-block;
         transform: translateX(-17px);
@@ -210,7 +220,7 @@ form fieldset{
 }
 }
 
-@media screen and (min-width:410px) {
+@media screen and (min-width:410px)and (max-width:640px) {
     #tasks_container ul .list_items span{
         display: inline-block;
         transform: translateX(-59px);
@@ -227,7 +237,7 @@ form fieldset{
         font-size: 0.87rem;
 }
 }
-@media screen and (min-width:435px) {
+@media screen and (min-width:435px)and (max-width:640px) {
     #tasks_container ul .list_items span{
         display: inline-block;
         transform: translateX(-59px);
@@ -245,24 +255,14 @@ form fieldset{
 }
 }
 
-@media screen and(min-width:459px) {
-    header h2{
-        text-align: center;
-        margin-left: 5%;
-    }
-    header img{
-        display: block;
-        position: absolute;
-        left: 5%;
-        top: 6%;
-    }
+@media screen and(min-width:463px) and(max-width:600px){
     #tasks_container ul .list_items span{
         display: inline-block;
-        transform: translateX(-30px);
+        transform: translateX(-70px);
     }
     #tasks_container ul .list_items li{
         display: inline-block;
         transform: translateX(-15px);
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
