@@ -3,6 +3,9 @@ let add=document.querySelector("#add");
 let list_task=document.querySelector("#list_task");
 let task_container=document.querySelector("#tasks_container");
 
+let tab=['no task'];
+let n=0;
+
 //Function add task  
 add.addEventListener("click",function(e){
     e.preventDefault();
@@ -10,6 +13,17 @@ add.addEventListener("click",function(e){
         task.placeholder="you should write a task before";
         task.style.borderColor="red";
     }else{
+        for (let i=0;i<tab.length;i++){
+            if(task.value==tab[i]){
+                n+=1;
+            }
+        }
+        if(n!=0){
+            alert("this task already exist");
+            task.value="";
+        }
+        else{
+     tab.push(task.value);       
     let li=document.createElement("li");
     let div=document.createElement("div");
     let span1=document.createElement("span");
@@ -42,10 +56,10 @@ add.addEventListener("click",function(e){
     categorized.classList.add("but");
     categorized.addEventListener("click",function(e){
         e.preventDefault();
-        let ul=document.createElement("ul");
+        let listes=document.querySelector("ul");
         let h3=document.createElement("h3");
+        let ul=document.createElement("ul");
         ul.appendChild(h3);
-        ul.classList.add("new_list");
         task_container.appendChild(ul);
         task.placeholder="Write the categorie here";
         task.style.borderColor="red";
@@ -58,10 +72,12 @@ add.addEventListener("click",function(e){
             d.preventDefault();
             h3.textContent=task.value;
             task.value="";
+            ul.classList.add("new_list");
             ul.appendChild(categorized.parentElement);
             first_form.removeChild(ok);
             task.placeholder="Write your task here";
             task.style.borderColor="";
+            
         })
         
     })
@@ -86,6 +102,7 @@ add.addEventListener("click",function(e){
             first_form.removeChild(ok);
             task.placeholder="Write your task here";
             task.style.borderColor="";
+            
         })
         
         })
@@ -136,15 +153,18 @@ add.addEventListener("click",function(e){
     
 }
 
+}
+for(let i=0;i<tab.length;i++){
+    console.log(tab[i])
+}
 })
 
 
 
-function saveData(){
-    localStorage.setItem('data', list_task.innerHTML);
+function saveTasks(){
+    localStorage.setItem('tasks', task_container.innerHTML);
 }
 
-function getData(){
-    list_task.innerHTML=localStorage.getItem('data');
+function getTasks(){
+    task_container.innerHTML=localStorage.getItem('tasks');
 }
-

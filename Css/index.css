@@ -252,17 +252,21 @@ form fieldset{
         transform: translateX(-3px);
         margin-right: 2%;
         font-size: 0.9rem;
+        
 }
 }
 
-@media screen and(min-width:463px) and(max-width:600px){
-    #tasks_container ul .list_items span{
-        display: inline-block;
-        transform: translateX(-70px);
+@media screen and(min-width:560px) and (max-width:800px){
+
+    
+    header h2{
+        text-align: center;
+        margin-left: 5%;
     }
-    #tasks_container ul .list_items li{
-        display: inline-block;
-        transform: translateX(-15px);
-        font-size: 0.9rem;
+    header img{
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: -3%;
     }
 }
